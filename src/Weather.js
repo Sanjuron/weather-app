@@ -18,6 +18,7 @@ class Weather extends Component {
             console.log(res.data.list[0].main.temp) //température
             console.log(res.data.list[0].weather[0].icon) // icone
 
+          //remplacer par un map ou filter. S'inspirer du multiquizz  
             this.setState({
                 city : res.data.city.name,
                 description: res.data.list[0].weather[0].description,
@@ -41,31 +42,31 @@ class Weather extends Component {
     render() { 
         return ( 
             <div>
-                <div className= "Today">
+                <div className= "today">
                     <h1>Météo du jour</h1>
                     <p>{this.state.city}</p>
                     <p>{this.state.description}</p>
-                    <p>{this.state.temp}</p>
+                    <p>{this.state.temp}°C</p>
                     
-                    <img src="{http://openweathermap.org/img/wn/%{this.state.icon}@2x.png}" alt=""/>
+                    <img src="{http://openweathermap.org/img/wn/${this.state.icon}@2x.png}" alt=""/>
                 </div>
                 <div className="futuredays">
                 <div className="nextdays">
                     <p>{this.state.city}</p>
                     <p>{this.state.description1}</p>
-                    <p>{this.state.temp1}</p>
+                    <p>{this.state.temp1}°C</p>
                     <p>{this.state.icon1}</p>
                 </div>
                 <div className="nextdays">
                     <p>{this.state.city}</p>
                     <p>{this.state.description2}</p>
-                    <p>{this.state.temp2}</p>
+                    <p>{this.state.temp2}°C</p>
                     <p>{this.state.icon2}</p>
                 </div>
                 <div className="nextdays">
                 <p>{this.state.city}</p>
                 <p>{this.state.description3}</p>
-                <p>{this.state.temp3}</p>
+                <p>{this.state.temp3}°C</p>
                 <p>{this.state.icon3}</p>
                 </div>
                 </div>
