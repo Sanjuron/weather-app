@@ -6,7 +6,9 @@ import './Weather.css';
 
 class Weather extends Component {
     state = {
-              }
+        timeStamp : null,
+
+                  }
 
 
 
